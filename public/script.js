@@ -1,4 +1,4 @@
-// const showButton = document.getElementById("showButton");
+const showButton = document.getElementById("showButton");
 const christmasMessage = document.getElementById("as");
 
 showButton.addEventListener("click", function () {
@@ -59,21 +59,21 @@ treeIcon.addEventListener("mouseenter", function () {
     treeIcon.classList.remove("shake-animation");
   });
 });
-// document.addEventListener("click", function (event) {
-//   // Kiểm tra nếu nhấn ngoài cửa sổ thiệp
-//   if (!guideInfo.contains(event.target) && !showButton.contains(event.target)) {
-//     if (guideInfo.classList.contains("show")) {
-//       guideInfo.classList.remove("show");
-//       guideInfo.classList.add("hidden");
+document.addEventListener("click", function (event) {
+  // Kiểm tra nếu nhấn ngoài cửa sổ thiệp
+  if (!guideInfo.contains(event.target) && !showButton.contains(event.target)) {
+    if (guideInfo.classList.contains("show")) {
+      guideInfo.classList.remove("show");
+      guideInfo.classList.add("hidden");
 
-//       // Hiển thị nút "Gửi bé nè"
-//       showButton.classList.remove("hidden");
+      // Hiển thị nút "Gửi bé nè"
+      showButton.classList.remove("hidden");
 
-//       // Hiển thị lại cây thông
-//       treeIcon.style.display = "block";
-//     }
-//   }
-// });
+      // Hiển thị lại cây thông
+      treeIcon.style.display = "block";
+    }
+  }
+});
 function createSnowflakes() {
   const snowflakesContainer = document.createElement("div");
   snowflakesContainer.id = "snowflakeContainer"; // Đặt ID như trong CSS của bạn

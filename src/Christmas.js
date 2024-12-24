@@ -4,14 +4,7 @@ import "./styles.css";
 const Christmas = () => {
     const audioRef = useRef(null); // Tạo ref cho audio
 
-    // const playAudio = () => {
-    //     if (audioRef.current) {
-    //         audioRef.current.currentTime = 0; // Đặt lại thời gian phát về 0
-    //         audioRef.current.play().catch(error => {
-    //             console.error("Không thể phát âm thanh:", error);
-    //         });
-    //     }
-    // };
+
     useEffect(() => {
         const playBackgroundMusic = () => {
             if (audioRef.current) {
@@ -37,14 +30,13 @@ const Christmas = () => {
         };
     }, []);
 
-    // const playAudio = () => {
-    //     if (audioRef.current) {
-    //         audioRef.current.currentTime = 0; // Đặt lại thời gian phát về 0
-    //         audioRef.current.play().catch(error => {
-    //             console.error("Không thể phát âm thanh:", error);
-    //         });
-    //     }
-    // };
+    const handlePlayMusic = () => {
+        if (audioRef.current) {
+            audioRef.current.play().catch((error) => {
+                console.error("Không thể phát nhạc:", error);
+            });
+        }
+    };
 
     return (
         <div>
@@ -64,7 +56,7 @@ const Christmas = () => {
 
             {/* Nút hiển thị thiệp */}
             <div className="container">
-                <button id="showButton">Gửi bé nè 🎄</button>
+                <button id="showButton" onClick={handlePlayMusic}>Gửi bé nè 🎄</button>
             </div>
 
             {/* Thiệp Giáng Sinh */}
